@@ -47,7 +47,13 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Aha-Soft-Free-Large-Boss-Admin.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -73,13 +79,69 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="API\OleDb_Tools.vb" />
+    <Compile Include="Controllers\Frm_CustomersController.Designer.vb">
+      <DependentUpon>Frm_CustomersController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Frm_CustomersController.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Controllers\Frm_PartsController.Designer.vb">
+      <DependentUpon>Frm_PartsController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Frm_PartsController.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controllers\Frm_ProductsController.Designer.vb">
+      <DependentUpon>Frm_ProductsController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Frm_ProductsController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\Frm_ProductTypesController.Designer.vb">
+      <DependentUpon>Frm_ProductTypesController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Frm_ProductTypesController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\Frm_TransactionController.Designer.vb">
+      <DependentUpon>Frm_TransactionController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Frm_TransactionController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Customer_Add_Edit.Designer.vb">
+      <DependentUpon>Frm_Customer_Add_Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Customer_Add_Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Part_Add_Edit.Designer.vb">
+      <DependentUpon>Frm_Part_Add_Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Part_Add_Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Product_Add_Edit.Designer.vb">
+      <DependentUpon>Frm_Product_Add_Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Product_Add_Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Product_Type_Add_Edit.Designer.vb">
+      <DependentUpon>Frm_Product_Type_Add_Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Product_Type_Add_Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.vb">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Part.vb" />
+    <Compile Include="Models\Product.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +159,36 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\Frm_CustomersController.resx">
+      <DependentUpon>Frm_CustomersController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Frm_PartsController.resx">
+      <DependentUpon>Frm_PartsController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Frm_ProductsController.resx">
+      <DependentUpon>Frm_ProductsController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Frm_ProductTypesController.resx">
+      <DependentUpon>Frm_ProductTypesController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Frm_TransactionController.resx">
+      <DependentUpon>Frm_TransactionController.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Customer_Add_Edit.resx">
+      <DependentUpon>Frm_Customer_Add_Edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Part_Add_Edit.resx">
+      <DependentUpon>Frm_Part_Add_Edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Product_Add_Edit.resx">
+      <DependentUpon>Frm_Product_Add_Edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Product_Type_Add_Edit.resx">
+      <DependentUpon>Frm_Product_Type_Add_Edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -115,6 +207,14 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Aha-Soft-Free-Large-Boss-Admin.ico" />
+    <Content Include="DB\ProductManufacturing.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
